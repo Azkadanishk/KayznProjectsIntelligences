@@ -1,0 +1,72 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>KaynzProject/Part-7</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0a0a0a;
+      color: #fff;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      background: #1a1a1a;
+      border-radius: 16px;
+      padding: 30px;
+      max-width: 700px;
+      margin: auto;
+      box-shadow: 0 0 25px rgba(255,255,255,0.1);
+    }
+    audio {
+      margin: 20px 0;
+    }
+    input, button {
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    .btn {
+      background-color: #00ffaa;
+      color: black;
+      border: none;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Part 7: Dengarkan Audio dan Jawab</h2>
+    <p>Dengarkan audio berikut. Apa angka yang kamu dengar?</p><audio controls>
+  <source src="ElevenLabs_2025-06-20T10_02_44_Liam_pre_sp100_s50_sb75_v3.mp3" type="audio/mpeg">
+  Browser kamu tidak mendukung audio.
+</audio>
+
+<input type="text" id="angkaDengar" placeholder="Masukkan angka yang kamu dengar">
+<br>
+<button class="btn" onclick="cekJawaban()">Submit</button>
+
+<p id="feedback"></p>
+<button class="btn hidden" id="lanjut" onclick="window.location.href='final.html'">Lanjut ke Tahap Terakhir</button>
+
+  </div>  <script>
+    function cekJawaban() {
+      const input = document.getElementById("angkaDengar").value.trim();
+      const benar = "80";
+      const feedback = document.getElementById("feedback");
+      const lanjut = document.getElementById("lanjut");
+
+      if (input === benar) {
+        feedback.innerText = "✅ Benar! Klik untuk Lanjut Tahap Terakhir.";
+        lanjut.classList.remove("hidden");
+      } else {
+        feedback.innerText = "❌ Masih salah, coba dengarkan lagi audionya.";
+        lanjut.classList.add("hidden");
+      }
+    }
+  </script></body>
+</html>

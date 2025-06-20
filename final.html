@@ -1,0 +1,93 @@
+<!--
+🎯 Final Page - Gabungkan Semua Kode
+--><!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>KaynzProject/Final/Selamat!!!</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      background: #1a1a1a;
+      border-radius: 16px;
+      padding: 30px;
+      max-width: 700px;
+      margin: auto;
+      box-shadow: 0 0 20px rgba(0,255,170,0.15);
+    }
+    input, button, a {
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      margin-top: 20px;
+      width: 80%;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      text-decoration: none;
+    }
+    .btn {
+      background-color: #00ffaa;
+      color: black;
+      border: none;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #00dd99;
+    }
+    .hidden {
+      display: none;
+    }
+    .final-message {
+      margin-top: 30px;
+      font-size: 18px;
+      color: #00ffaa;
+    }
+    .contact-btn {
+      background: linear-gradient(45deg, #00ffaa, #00bbaa);
+      color: #000;
+      font-weight: bold;
+      border: 2px solid #00ffaa;
+      box-shadow: 0 0 10px rgba(0,255,170,0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .contact-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0,255,170,0.8);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Tahap Terakhir 🔓</h2>
+    <p>Masukkan semua kode yang berhasil kamu pecahkan dan gabungkan sesuai urutan dari setiap soal!</p>
+    <p><i>(Contoh: Jika kamu mendapatkan 21, lalu 41, lalu 16, tulis 214116... dst)</i></p><input type="text" id="gabunganKode" placeholder="Gabungkan semua kode di sini">
+<br>
+<button class="btn" onclick="cekKode()">Submit</button>
+
+<div class="final-message" id="finalMsg"></div>
+<a id="contactBtn" class="btn contact-btn hidden" href="https://wa.me/6282216292780?text=Akulah%20anak%20jenius%20itu" target="_blank">📞 Hubungi Sang Pembuat</a>
+
+  </div>  <script>
+    function cekKode() {
+      const kode = document.getElementById("gabunganKode").value.trim();
+      const benar = "82216292780";
+      const msg = document.getElementById("finalMsg");
+      const contact = document.getElementById("contactBtn");
+
+      if (kode === benar) {
+        msg.innerHTML = "🎉 SELAMAT! Kamu adalah salah satu dari sedikit jenius yang berhasil. Kirim pesan: <b>'Aku lah anak jenius itu'</b> ke nomor tersebut untuk klaim hadiahmu!";
+        contact.classList.remove("hidden");
+      } else {
+        msg.innerText = "❌ Kode tidak cocok. Coba gabungkan kembali sesuai urutan tantangan.";
+        contact.classList.add("hidden");
+      }
+    }
+  </script></body>
+</html>

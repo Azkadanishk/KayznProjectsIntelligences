@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>KaynzProject/Part-6</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d0d0d;
+      color: #fff;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      background: #1a1a1a;
+      border-radius: 16px;
+      padding: 30px;
+      max-width: 700px;
+      margin: auto;
+      box-shadow: 0 0 25px rgba(0,255,170,0.1);
+    }
+    .morse {
+      font-family: 'Courier New', monospace;
+      color: #00ffaa;
+      margin: 30px 0;
+      font-size: 20px;
+    }
+    input, button {
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    .btn {
+      background-color: #00ffaa;
+      color: black;
+      border: none;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Part 6: Tantangan Kode</h2>
+    <p>Pasti kamu sangat familiar dengan sandi ini.</p>
+    <p>Kodenya adalah:</p><div class="morse">
+  ..--- --...  
+</div>
+
+<p>Apa arti dari kode di atas?</p>
+
+<input type="text" id="jawaban" placeholder="Tulis jawabannya di sini">
+<br>
+<button class="btn" onclick="cekJawaban()">Submit</button>
+
+<p id="feedback"></p>
+<button class="btn hidden" id="lanjut" onclick="window.location.href='part7.html'">Lanjut ke Tahap Selanjutnya</button>
+
+  </div>  <script>
+    function cekJawaban() {
+      const input = document.getElementById("jawaban").value.trim();
+      const benar = "27";
+      const feedback = document.getElementById("feedback");
+      const lanjut = document.getElementById("lanjut");
+
+      if (input === benar) {
+        feedback.innerText = "✅ Benar! Kamu layak lanjut ke tahap terakhir.";
+        lanjut.classList.remove("hidden");
+      } else {
+        feedback.innerText = "❌ Masih salah, coba lagi.";
+        lanjut.classList.add("hidden");
+      }
+    }
+  </script></body>
+</html>
