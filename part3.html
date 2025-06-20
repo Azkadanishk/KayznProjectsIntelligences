@@ -1,7 +1,8 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>KaynzProject/Part-3</title>
+  <title>KaynzProject | Part 3</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -10,6 +11,7 @@
       text-align: center;
       padding: 40px;
     }
+
     .card {
       background-color: #1e1e1e;
       border-radius: 16px;
@@ -18,38 +20,68 @@
       margin: auto;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
     }
-    input, button {
-      margin-top: 20px;
+
+    input[type="text"] {
       padding: 10px 16px;
       font-size: 16px;
       border-radius: 8px;
+      border: 1px solid #555;
+      background-color: #2a2a2a;
+      color: white;
     }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      background-color: white;
+      color: #121212;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+
     .hidden {
       display: none;
     }
+
   </style>
 </head>
 <body>
   <div class="card">
     <h2>Part 3: Finalisasi Kode</h2>
-    <p class="code-hint">Petunjuk: Caesar Chiper</p>
-    <p class="code-hint">Code: ibibib lbnv blijsozb nfofnvlbo dbsbozb zbb?,<br>lpefozb bebmbi : FB</p><p>The Code is encrypted. Proceed by converting letters to numbers.</p><p style="margin-top: 40px;">Masukkan angka yang kamu temukan dari kode di atas:</p>
-<input type="text" id="kodeUser" placeholder="Masukkan kode...">
-<button onclick="cekKode()">Submit</button>
+    <p>Petunjuk: Caesar Chiper</p>
+    <p>Code: ibibib lbnv blijsozb nfofnvlbo dbsbozb zbb?,<br>lpefozb bebmbi : FB</p>
+    <p>The Code is encrypted. Proceed by converting letters to numbers.</p>
 
-<div id="linkLanjut" class="hidden">
-  <p style="margin-top: 40px;">✅ Benar! Kamu layak lanjut ke bagian berikutnya.</p>
-  <a href="part4.html"><button>Lanjut ke Part 4</button></a>
-</div>
+    <p style="margin-top: 40px;">Masukkan angka yang kamu temukan dari kode di atas:</p>
+    <input type="text" id="kodeUser" placeholder="Masukkan kode...">
+    <br>
+    <button onclick="cekKode()">Submit</button>
 
-  </div>  <script>
+    <div id="linkLanjut" class="hidden">
+      <p style="margin-top: 40px;">✅ Benar! Kamu layak lanjut ke bagian berikutnya.</p>
+      <a href="part4.html">
+        <button>Lanjut ke Part 4</button>
+      </a>
+    </div>
+  </div>
+
+  <script>
     function cekKode() {
       const input = document.getElementById("kodeUser").value.trim();
       if (input === "62") {
         document.getElementById("linkLanjut").classList.remove("hidden");
       } else {
-        alert("Ups, masih salah. Coba lagi!");
+        alert("❌ Salah. Coba lagi, perhatikan kodenya dengan teliti!");
       }
     }
-  </script></body>
+  </script>
+</body>
 </html>
