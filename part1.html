@@ -1,7 +1,8 @@
-<!DOCTYPE html><html lang="id">
+<!DOCTYPE html>
+<html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>KaynzProject/Part-1</title>
+  <title>KaynzProject | Part 1</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -10,6 +11,7 @@
       text-align: center;
       padding: 40px;
     }
+
     .card {
       background-color: #1c1c1c;
       border-radius: 16px;
@@ -18,23 +20,36 @@
       margin: auto;
       box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
     }
+
     input[type=number] {
       padding: 10px;
       font-size: 16px;
       width: 100px;
+      border-radius: 6px;
+      border: 1px solid #aaa;
     }
+
     button {
       padding: 10px 20px;
       font-size: 16px;
       background-color: white;
+      color: #0d0d0d;
       border: none;
       border-radius: 8px;
       margin-top: 10px;
       cursor: pointer;
+      transition: transform 0.2s ease-in-out;
     }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+
     .hidden {
       display: none;
     }
+
     .highlight {
       background: #e0ffe0;
       padding: 10px;
@@ -44,45 +59,54 @@
   </style>
 </head>
 <body>
+
   <div class="card">
-    <h2>Part 1 - Soal Matematika</h2>
+    <h2>Part 1 - Tantangan Matematika</h2>
+
     <div id="soal1">
       <p>Soal 1: (41 × 2) + (20 ÷ 2) – 10 = ?</p>
       <input type="number" id="jawab1">
+      <br>
       <button onclick="cekJawaban1()">Submit</button>
-    </div><div id="soal2" class="hidden">
-  <p>Soal 2: (7 × 3) – 15 + (3 × 5)= ?</p>
-  <input type="number" id="jawab2">
-  <button onclick="cekJawaban2()">Submit</button>
-</div>
+    </div>
 
-<div id="selesai" class="hidden">
-  <p>✅ Benar!</p>
-  <p>Klik tombol di bawah untuk melanjutkan ke bagian berikutnya.</p>
-  <a href="part2.html">
-    <button>Lanjut ke Part 2</button>
-  </a>
-</div>
+    <div id="soal2" class="hidden">
+      <p>Soal 2: (7 × 3) – 15 + (3 × 5) = ?</p>
+      <input type="number" id="jawab2">
+      <br>
+      <button onclick="cekJawaban2()">Submit</button>
+    </div>
 
-  </div>  <script>
+    <div id="selesai" class="hidden">
+      <p>✅ Benar!</p>
+      <p>Klik tombol di bawah untuk melanjutkan ke bagian berikutnya.</p>
+      <a href="part2.html">
+        <button>Lanjut ke Part 2</button>
+      </a>
+    </div>
+  </div>
+
+  <script>
     function cekJawaban1() {
       const jwb1 = document.getElementById("jawab1").value;
       if (parseInt(jwb1) === 82) {
-        document.getElementById("soal2").classList.remove("hidden");
         document.getElementById("soal1").classList.add("hidden");
+        document.getElementById("soal2").classList.remove("hidden");
       } else {
-        alert("Jawaban salah. Coba lagi.");
+        alert("❌ Jawaban salah. Coba lagi ya!");
       }
     }
 
     function cekJawaban2() {
       const jwb2 = document.getElementById("jawab2").value;
       if (parseInt(jwb2) === 21) {
-        document.getElementById("selesai").classList.remove("hidden");
         document.getElementById("soal2").classList.add("hidden");
+        document.getElementById("selesai").classList.remove("hidden");
       } else {
-        alert("Jawaban salah. Coba lagi.");
+        alert("❌ Jawaban salah. Coba lagi ya!");
       }
     }
-  </script></body>
+  </script>
+
+</body>
 </html>
